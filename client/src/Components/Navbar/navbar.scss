@@ -1,0 +1,42 @@
+.navbar-outer-container{
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: fixed;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    top: 0;
+    left: 0;
+
+.navbar-logo-container{
+    img{
+        margin-left: 20px;
+        width: 150px;
+    }
+}
+
+.navbar-options-container{
+    display: flex;
+    flex-direction:row ;
+    gap: 50px;
+    font-family: "Mont";
+    justify-content: space-around;
+    margin-left:800px;
+    
+    .navbar-buttons{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        button{
+            font-family: "Mont";
+            border-radius: 20px;
+           border: none;
+           height: 50px;
+        }
+    }
+}
+
+}
