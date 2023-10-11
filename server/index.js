@@ -3,6 +3,7 @@ import cors from "cors";
 import EmployeeRoute from "./Routes/chimeraRoute.js";
 import connectDB from "./DataBase/dbConnect.js";
 import dotenv from "dotenv"; // Change 'env' to 'dotenv'
+import jobRoute from "./Routes/jobRoute.js"
 
 dotenv.config();
 const app = express();
@@ -19,7 +20,7 @@ app.get("/api/test", (req, res) => {
 
 
 app.use("/api/v1/employee", EmployeeRoute);
-// app.use("/api/v1/job", JobRoute);
+app.use("/api/v1/job", jobRoute);
 
 const PORT = process.env.PORT || 8080; 
 app.listen(PORT, () => {
