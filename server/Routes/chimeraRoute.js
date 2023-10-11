@@ -1,5 +1,6 @@
 import express from "express";
 import { registerEmployeeController } from "../Controllers/userController.js";
+import { loginController } from "../Controllers/loginController.js";
 // Import any necessary middleware here
 
 const router = express.Router();
@@ -10,5 +11,6 @@ const router = express.Router();
 
 // Register new employee account
 router.post("/register", registerEmployeeController);
+router.post("/login", loginController);
 
 export default router;
