@@ -156,7 +156,6 @@ export const removeApplicationForJobController = async (req, res) => {
 };
 
 // Job Category based Listing
-
 export const getJobCategoryBasedController = async (req, res) => {
     const { category } = req.params
     const slugCategory = slugify(category)
@@ -168,3 +167,42 @@ export const getJobCategoryBasedController = async (req, res) => {
         res.send({ message: "Error in getting categorized job" });
     }
 }
+
+// fetch data for single page
+export const singleJobPageController = async (req, res) => {
+    const { jobId } = req.params
+    try {
+        const sPage = await Job.findById({ _id: jobId })
+        res.send({ sPage, message: "page Fetched successfully" })
+    } catch (error) {
+        console.log(error)
+        res.status(500).send("Error fetching job for single page");
+    }
+}
+
+//job search 
+export const jobSearchController = async (req, res) => {
+    const { keyword, category } = req.query;
+    try {
+        // Build the search query based on provided criteria
+        const matchQuery = {};
+
+        if (keyword) {
+            matchQuery.$or = [
+                { title: { $regex: keyword, $options: "i" } },
+                { description: { $regex: keyword, $options: "i" } }
+            ];
+        }
+        if (category && category !== "all") {
+            matchQuery.category = category;
+        }
+        const searchResults = await Job.aggregate([
+            { $match: matchQuery }
+        ]);
+        res.send({ success: true, searchResults });
+    } catch (error) {
+        console.log(error);
+        res.send({ success: false, message: "Error in Search" });
+    }
+};
+
