@@ -1,16 +1,29 @@
 import express from "express";
 
 // import {requireSignIn} from "../Middlewares/authMiddleware.js"
-import { createJobController, jobUpdateController } from "../Controllers/jobController.js";
+import { applyForJobController, createJobController, deleteJobController, getAllJobController, jobUpdateController, totalJobApplicantsController } from "../Controllers/jobController.js";
 
 
 const router = express.Router()
 
-
+// Route for New job post
 router.post("/create-job", createJobController);
 
+// Route for Update an existing post
 router.put("/update-job/:jobId",jobUpdateController);
 
+// Route for delete a Job
+router.delete("/delete-job/:jobId", deleteJobController);
+
+// Route to get All Jobs
+router.get("/get-jobs", getAllJobController);
+
+// Route to get total applicants for the job
+router.get("/populate-applicants/:jobId", totalJobApplicantsController);
+
+// Route to apply for Job
+
+router.put("/apply-for-job/:jobId", applyForJobController);
 
 
 export default router;
