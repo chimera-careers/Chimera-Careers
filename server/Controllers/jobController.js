@@ -96,7 +96,6 @@ export const totalJobApplicantsController = async (req, res) => {
 }
 
 // Apply for Job
-
 export const applyForJobController = async (req, res) => {
     const userId = req.user._id;
     const { jobId } = req.params;
@@ -125,3 +124,47 @@ export const applyForJobController = async (req, res) => {
         });
     }
 };
+
+// Remove Application
+export const removeApplicationForJobController = async (req, res) => {
+    const userId = req.user._id;
+    const { jobId } = req.params;
+
+    try {
+        const job = await Job.findByIdAndUpdate(
+            jobId,
+            { $pull: { applicants: userId } },
+            { new: true }
+        );
+        const employee = await Employee.findByIdAndUpdate(
+            userId,
+            { $pull: { appliedJobs: jobId } },
+            { new: true }
+        );
+        res.send({
+            success: true,
+            message: "Removed application for the job successfully",
+            job,
+        });
+    } catch (error) {
+        console.error(error);
+        res.send({
+            success: false,
+            message: "Error in removing application for the job",
+        });
+    }
+};
+
+// Job Category based Listing
+
+export const getJobCategoryBasedController = async (req, res) => {
+    const { category } = req.params
+    const slugCategory = slugify(category)
+    try {
+        const catBasedJobs = await Job.find({ slugCategory })
+        res.send({ catBasedJobs, message: "fetched job based on category" })
+    } catch (error) {
+        console.log(error)
+        res.send({ message: "Error in getting categorized job" });
+    }
+}

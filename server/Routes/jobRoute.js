@@ -1,7 +1,7 @@
 import express from "express";
 
 // import {requireSignIn} from "../Middlewares/authMiddleware.js"
-import { applyForJobController, createJobController, deleteJobController, getAllJobController, jobUpdateController, totalJobApplicantsController } from "../Controllers/jobController.js";
+import { applyForJobController, createJobController, deleteJobController, getAllJobController, getJobCategoryBasedController, jobUpdateController, removeApplicationForJobController, totalJobApplicantsController } from "../Controllers/jobController.js";
 
 
 const router = express.Router()
@@ -22,8 +22,13 @@ router.get("/get-jobs", getAllJobController);
 router.get("/populate-applicants/:jobId", totalJobApplicantsController);
 
 // Route to apply for Job
-
 router.put("/apply-for-job/:jobId", applyForJobController);
+
+//Route for remove Application
+router.put("/remove-job-application/:jobId",  removeApplicationForJobController);
+
+// jobs based on category (pass the category as slug from the client)
+router.get("/get-category/:category", getJobCategoryBasedController)
 
 
 export default router;
