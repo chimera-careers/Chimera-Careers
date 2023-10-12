@@ -7,7 +7,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="w-full  flex items-center justify-around sticky ">
+    <div className="w-full  flex items-center justify-around sticky">
       <div className="logo">
         <Link to="/">
           <img src={Logo} alt="" className="w-32 h-20 ml-10" />
