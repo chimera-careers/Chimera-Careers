@@ -5,8 +5,7 @@ import { hashPassword } from "../Helpers/hashPassword.js";
 
 export const registerEmployeeController = async (req, res) => {
   try {
-    const { name, email, wpnum, password, workExperience, education } =
-      req.body;
+    const { name, email, wpnum, password, education } = req.body;
     const isEmployeeEmailExist = await Employee.findOne({ email });
 
     const lowerCaseEmail = email.toLowerCase();
@@ -21,7 +20,6 @@ export const registerEmployeeController = async (req, res) => {
       email: lowerCaseEmail,
       wpnum,
       password: hashedPassword,
-      workExperience, // Change from 'experience' to 'workExperience'
       education,
     }).save();
 
