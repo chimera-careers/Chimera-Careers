@@ -22,6 +22,7 @@ app.get("/api/test", (req, res) => {
 app.use("/api/v1/employee", EmployeeRoute);
 app.use("/api/v1/job", jobRoute);
 
+
 const PORT = process.env.PORT || 8080; 
 app.listen(PORT, () => {
     console.log(`Connected to port ${PORT}`);
