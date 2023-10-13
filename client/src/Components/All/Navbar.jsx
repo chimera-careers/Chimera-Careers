@@ -29,7 +29,7 @@ function Navbar() {
       </Link>
 
       {isMenuOpen ? (
-        <div className="fixed top-0 left-0 h-full w-80 bg-gray-300 flex  justify-center pt-8">
+        <div className=" fixed top-0 left-0 h-full w-80 bg-gray-300 flex  justify-center pt-8 transition-opacity ease-in-out">
           <div className="w-72 bg-indigo-900 h-56 rounded-xl flex flex-col justify-center items-center">
             <div className="text-white mt-4 flex flex-col ">
               <p>Hello & Welcome</p>

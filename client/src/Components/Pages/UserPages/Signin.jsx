@@ -1,6 +1,6 @@
 import React from 'react'
-import SigninForm from '../All/SigninForm';
-import Navbar from '../All/Navbar';
+import SigninForm from '../../All/SigninForm';
+import Navbar from '../../All/Navbar';
 
 function Signin() {
   return (
