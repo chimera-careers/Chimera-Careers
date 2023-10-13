@@ -1,7 +1,7 @@
 import express from "express";
 import { registerEmployeeController } from "../Controllers/userController.js";
 import { loginController } from "../Controllers/loginController.js";
-import { registerAdminController } from "../Controllers/adminController.js";
+import { adminLoginController, registerAdminController } from "../Controllers/adminController.js";
 
 
 const router = express.Router();
@@ -14,6 +14,8 @@ router.post("/register", registerEmployeeController);
 router.post("/login", loginController);
 //Register for Admin
 router.post("/registeradmin",registerAdminController)
+// login for Admin
+router.post("/loginadmin",adminLoginController)
 
 
 export default router;
