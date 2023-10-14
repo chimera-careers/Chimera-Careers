@@ -33,7 +33,7 @@ function Hero() {
             Search
           </button>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center animate-trans-right">
           <h1 className=" text-indigo-900 text-4xl font-black">
             "Connecting Dreams to Careers:
           </h1>
@@ -43,7 +43,7 @@ function Hero() {
         </div>
 
         <div className="flex flex-row justify-center gap-20 mb-32">
-          <button className="border bg-indigo-900 text-white p-5 rounded-xl flex gap-6">
+          <button className="border bg-indigo-900 text-white p-5 rounded-xl flex gap-6 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -60,10 +60,23 @@ function Hero() {
             </svg>
             Upload Resume
           </button>
-          <button className="border bg-indigo-900 text-white p-5 rounded-xl flex gap-6">Register Now <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-</svg>
-</button>
+          <button className="border bg-indigo-900 text-white p-5 rounded-xl flex gap-6 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300">
+            Register Now{" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </>

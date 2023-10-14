@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import { Link } from "react-router-dom";
+import ClickAwayListener from 'react-click-away-listener';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleClickAway = () => {
+	 setIsMenuOpen(false)
+	};
 
   return (
     <div className="w-full flex items-center justify-around sticky border-b shadow-sm">
@@ -29,7 +34,10 @@ function Navbar() {
       </Link>
 
       {isMenuOpen ? (
-        <div className=" fixed top-0 left-0 h-full w-80 bg-gray-300 flex  justify-center pt-8 transition-opacity ease-in-out">
+      <ClickAwayListener onClickAway={handleClickAway}>
+
+        <div className=" fixed top-0 left-0 h-full w-80 bg-gray-300 flex  justify-center pt-8 ">
+
           <div className="w-72 bg-indigo-900 h-56 rounded-xl flex flex-col justify-center items-center">
             <div className="text-white mt-4 flex flex-col ">
               <p>Hello & Welcome</p>
@@ -77,6 +85,7 @@ function Navbar() {
             </div>
           </div>
         </div>
+        </ClickAwayListener>
       ) : null}
 
       <div className="hidden md:flex items-center gap-10">

@@ -1,5 +1,5 @@
 import React from 'react'
-import RegisterForm from '../../All/RegisterForm'
+import RegisterForm from '../../All/Registration/RegisterForm'
 import Navbar from "../../All/Navbar"
 
 function Register() {
