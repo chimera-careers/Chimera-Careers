@@ -13,7 +13,7 @@ export default {
         }
       },
       animation:{
-        "trans-right":'trans-right 2.5s ease-in-out infinite'
+        "trans-right":'trans-right 5.5s ease-in-out infinite'
       }
     },
     plugins: [],

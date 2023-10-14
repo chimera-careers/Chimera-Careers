@@ -1,11 +1,12 @@
 import React from "react";
 import "./hero.scss";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
     <>
-      <div className="hero-container flex flex-col w-full h-screen  justify-around bg-cover">
-        <div className="flex flex-row gap-20  w-full justify-center mt-16">
+      <div className="hero-container flex flex-col w-full h-screen justify-around bg-cover">
+        <div className="flex flex-col gap-5 md:flex-row items-center md:gap-20  w-full justify-center mt-16">
           <div className="flex flex-row rounded bg-white h-14">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +34,7 @@ function Hero() {
             Search
           </button>
         </div>
-        <div className="flex flex-col justify-center items-center animate-trans-right">
+        <div className="flex flex-col justify-center items-center md:items-center m-6">
           <h1 className=" text-indigo-900 text-4xl font-black">
             "Connecting Dreams to Careers:
           </h1>
@@ -42,8 +43,8 @@ function Hero() {
           </h1>
         </div>
 
-        <div className="flex flex-row justify-center gap-20 mb-32">
-          <button className="border bg-indigo-900 text-white p-5 rounded-xl flex gap-6 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300">
+        <div className="flex flex-col gap-5 md:flex-row items-center md:gap-20  w-full justify-center">
+          <button className="border bg-indigo-900 text-white p-5 rounded-xl flex gap-6 transition ease-in-out  hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-75">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -60,7 +61,9 @@ function Hero() {
             </svg>
             Upload Resume
           </button>
-          <button className="border bg-indigo-900 text-white p-5 rounded-xl flex gap-6 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-300">
+          <Link to="/register">
+          
+          <button className="border bg-indigo-900 text-white p-5 rounded-xl flex gap-6 transition ease-in-out  hover:-translate-y-1 hover:scale-110 hover:bg-red-600 duration-75">
             Register Now{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +80,7 @@ function Hero() {
               />
             </svg>
           </button>
+          </Link>
         </div>
       </div>
     </>

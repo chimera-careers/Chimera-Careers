@@ -18,7 +18,7 @@ function RegistrationForm() {
 
   return (
     <div className="flex flex-row w-100%  mt-10">
-      <div className="w-2/4 flex  justify-center">
+      <div className="w-2/4 md:flex hidden  justify-center ">
         <ul className="space-y-2 flex flex-col gap-16">
           <li
             className={`cursor-pointer ${
@@ -62,7 +62,8 @@ function RegistrationForm() {
           </li>
         </ul>
       </div>
-      <div className="w-2/4 flex overflow-y-auto">
+      <div className="w-full md:w-2/4 h-[580px] flex justify-center overflow-scroll overflow-x-hidden">
+
         {step === 1 && <BasicDetails nextStep={nextStep} />}
         {step === 2 && (
           <VerificationCenter nextStep={nextStep} prevStep={prevStep} />
