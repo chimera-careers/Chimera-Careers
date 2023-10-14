@@ -62,7 +62,7 @@ function RegistrationForm() {
           </li>
         </ul>
       </div>
-      <div className="w-2/4 flex justify-center">
+      <div className="w-2/4 flex overflow-y-auto">
         {step === 1 && <BasicDetails nextStep={nextStep} />}
         {step === 2 && (
           <VerificationCenter nextStep={nextStep} prevStep={prevStep} />
