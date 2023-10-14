@@ -101,7 +101,6 @@ function Navbar() {
         <Link to="/testimonials">Testimonials</Link>
       </div>
 
-
       <div className="hidden md:flex gap-8 items-center">
         <Link to="/signin" className="flex flex-row gap-1">
           <button>Signin</button>

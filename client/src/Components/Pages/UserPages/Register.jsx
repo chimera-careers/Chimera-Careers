@@ -1,6 +1,6 @@
-import React from 'react'
-import RegisterForm from '../../All/Registration/RegisterForm'
-import Navbar from "../../All/Navbar"
+import React from "react";
+import RegisterForm from "../../All/Registration/RegisterForm";
+import Navbar from "../../All/Navbar";
 
 function Register() {
   return (
@@ -8,7 +8,7 @@ function Register() {
       <Navbar />
       <RegisterForm />
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;
